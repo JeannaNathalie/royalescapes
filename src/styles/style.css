@@ -5,3 +5,12 @@ html {
   --header-color: #ffffff;
   --text-color: #000000;
 }
+
+body {
+  background: var(--primary-color);
+}
+
+main {
+  padding: 3rem;
+  padding-top: 0%;
+}
