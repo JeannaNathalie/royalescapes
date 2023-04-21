@@ -1,12 +1,43 @@
 ---
 ---
 
-<div class="first_img">
-  <img class="img1" src="public/royal_billeder_vs/dolls.webp" alt="img1" />
+<div class="container">
+    <img class="royalescapes" src="/royal_billeder_vs/royal_logo.png" alt="logo" />
+  <img class="background" src="/royal_billeder_vs/dolls.webp" alt="img1" />
+  <img class="logo" src="/royal_billeder_vs/theplayroom.png" alt="logo" />
 </div>
 
 <style>
-  img {
-    max-width: 100%;
+  @media screen and (min-width: 800px) {
+    /* Styles for devices with a minimum width of 800px (e.g. desktops) */
+
+    .container {
+      position: relative;
+      display: inline-block;
+      width: 100%; /* Set the container width to 80% */
+    }
+
+    .logo {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      z-index: 1;
+      width: 50%; /* Set the width of the logo */
+      height: auto; /* Set the height to auto to preserve the aspect ratio */
+    }
+
+    .royalescapes{
+        position: fixed;
+        top: 10px;
+        left: 10px;
+      z-index: 2;
+      width: 7%; /* Set the width of the logo */
+      height: auto; /* Set the height to auto to preserve the aspect ratio */
+    }
+
+    img {
+      max-width: 100%; /* Set the maximum width of the image to 100% */
+      height: auto; Set the height to auto to preserve the aspect ratio
+    }
   }
 </style>
