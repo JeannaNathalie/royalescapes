@@ -1,11 +1,12 @@
 ---
 ---
 
+<h1>Share your experience with us!</h1>
 <form>
   <label for="title">Title:</label>
   <input id="title" name="title" type="text" required />
 
-  <label for="long">Long Description:</label>
+  <label for="long">How was your experience?</label>
   <textarea id="long" name="long" rows="6" required></textarea>
 
   <button type="submit">Submit</button>
@@ -54,11 +55,13 @@
 </script>
 
 <style>
+  h1 {
+    text-align: center;
+  }
   form {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 1rem;
+
     max-width: 500px;
     margin: 0 auto;
   }
@@ -66,12 +69,13 @@
   label {
     font-weight: bold;
     margin-bottom: 0.5rem;
+    padding: 2rem 0rem 0.3rem 0rem;
   }
 
   input,
   textarea {
     padding: 0.5rem;
-    border: 2px solid grey;
+    border: 2px solid #701208;
     border-radius: 0.5rem;
     width: 100%;
     box-sizing: border-box;
@@ -79,14 +83,16 @@
 
   button {
     padding: 0.5rem 1rem;
-    background-color: blue;
+    background-color: #e1bb19;
     color: white;
     border: none;
     border-radius: 0.5rem;
     cursor: pointer;
+    width: 7rem;
+    margin: 1rem auto;
   }
 
   button:hover {
-    background-color: rgb(96, 96, 223);
+    background-color: #b09b3d;
   }
 </style>
