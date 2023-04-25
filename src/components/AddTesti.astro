@@ -10,3 +10,83 @@
 
   <button type="submit">Submit</button>
 </form>
+
+<script>
+  const headers = {
+    apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRyY2Z3cmpldWdra3R4cnNkZ2J5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODIzMzI0OTksImV4cCI6MTk5NzkwODQ5OX0.tVFF6acofD4-o5xDWJrDvCI41ayy7t1UhKHYklR7C0I",
+    Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRyY2Z3cmpldWdra3R4cnNkZ2J5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODIzMzI0OTksImV4cCI6MTk5NzkwODQ5OX0.tVFF6acofD4-o5xDWJrDvCI41ayy7t1UhKHYklR7C0I",
+    "Content-Type": "application/json",
+    Prefer: "return=minimal",
+  };
+
+  const url = "https://drcfwrjeugkktxrsdgby.supabase.co/rest/v1/Testimonials";
+
+  function addTestimonial(newTestimonial) {
+    //dette er en funktion der putter data i tabellen og databasen
+    const options = {
+      method: "POST", //post gør at deen putter noget i tabellen istedet for at hente
+      headers: headers,
+      body: JSON.stringify(newTestimonial), //laver variablen newTestimonial til json (her er det et objekt med 2 værdier)
+    };
+
+    fetch(url, options)
+      .then((res) => res.json())
+      .then((data) => {
+        console.log("data:", data);
+        //når den er færdig med at putte i databasen går den til filen addTestimonialFeedback "/" er for at sikre at den leder i roden
+        window.location.href = "/addTestimonialFeedback";
+      });
+  }
+
+  const form = document.querySelector("form");
+  console.log("form.elements", form.elements);
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const obj = {
+      title: form.elements.title.value,
+      description: form.elements.long.value,
+    };
+
+    addTestimonial(obj);
+  });
+</script>
+
+<style>
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+
+  input,
+  textarea {
+    padding: 0.5rem;
+    border: 2px solid grey;
+    border-radius: 0.5rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  button {
+    padding: 0.5rem 1rem;
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: rgb(96, 96, 223);
+  }
+</style>
