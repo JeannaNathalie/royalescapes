@@ -1,6 +1,7 @@
 ---
 const url = "https://drcfwrjeugkktxrsdgby.supabase.co/rest/v1/Testimonials";
-const api = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRyY2Z3cmpldWdra3R4cnNkZ2J5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODIzMzI0OTksImV4cCI6MTk5NzkwODQ5OX0.tVFF6acofD4-o5xDWJrDvCI41ayy7t1UhKHYklR7C0I";
+const api =
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRyY2Z3cmpldWdra3R4cnNkZ2J5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODIzMzI0OTksImV4cCI6MTk5NzkwODQ5OX0.tVFF6acofD4-o5xDWJrDvCI41ayy7t1UhKHYklR7C0I";
 
 const data = await fetch(url, {
   method: "GET",
@@ -14,20 +15,25 @@ import Testimonial from "../components/Testimonial.astro";
 ---
 
 <div class="boks">
-  <div class="grid_1-1-1">
+  <!-- <div class="grid_1-1-1">
     <img class="rotate1" src="/images/gold_detail_5.svg" alt="guld detalje" />
     <img class="rotate_none" src="/images/gold_detail_3.svg" alt="guld detalje" />
     <img class="rotate2" src="/images/gold_detail_5.svg" alt="guld detalje" />
-  </div>
+  </div> -->
+
   {
     data.map((testimonial) => {
       return <Testimonial data={testimonial} />;
     })
   }
-  <div class="grid_1-1-1">
-    <img class="rotate_bund" src="/images/gold_detail_5.svg" alt="guld detalje" />
+  <!-- <div class="grid_1-1-1">
+    <img
+      class="rotate_bund"
+      src="/images/gold_detail_5.svg"
+      alt="guld detalje"
+    />
     <img class="rotate3" src="/images/gold_detail_5.svg" alt="guld detalje" />
-  </div>
+  </div> -->
 </div>
 
 <style>
@@ -37,57 +43,5 @@ import Testimonial from "../components/Testimonial.astro";
     margin: 1rem auto; /* set margin-top and margin-bottom to auto */
     border-radius: 25px;
     color: white;
-  }
-
-  .rotate1 {
-    transform: rotate(90deg);
-  }
-  .rotate2 {
-    transform: rotate(180deg);
-  }
-
-  .rotate3 {
-    transform: rotate(-90deg);
-  }
-
-  .grid_1-1-1 {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-
-  .rotate1 {
-    grid-row: 1/2;
-    grid-column: 1/2;
-    max-width: 6rem;
-    justify-self: start;
-    align-self: start;
-  }
-
-  .rotate_none {
-    grid-row: 1/2;
-    grid-column: 2/3;
-    max-width: 4rem;
-    justify-self: center;
-  }
-
-  .rotate2 {
-    grid-row: 1/2;
-    max-width: 6rem;
-    justify-self: end;
-  }
-
-  .rotate_bund {
-    grid-row: 3/4;
-    grid-column: 1/2;
-    max-width: 6rem;
-    justify-self: start;
-    align-self: end;
-  }
-
-  .rotate3 {
-    grid-row: 3/4;
-    grid-column: 3/4;
-    max-width: 6rem;
-    justify-self: end;
   }
 </style>
