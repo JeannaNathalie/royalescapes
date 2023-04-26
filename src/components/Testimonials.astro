@@ -31,8 +31,10 @@ import Testimonial from "../components/Testimonial.astro";
   <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
   <script src="https://unpkg.com/@lottiefiles/lottie-interactivity@latest/dist/lottie-interactivity.min.js"></script>
 
-  <div style="width: 85px; height: 85px; position: relative; bottom: 7rem;">
-    <lottie-player id="thirdLottie" src="stars2.json" background="transparent" speed="1" style="width: 300px; height: 300px;" loop autoplay></lottie-player>
+  <div class="stars">
+    <div style="width: 85px; height: 85px; position: relative; bottom: 8rem; left: 17.5rem;">
+      <lottie-player id="thirdLottie" src="stars2.json" background="transparent" speed="1" style="width: 300px; height: 300px;" loop autoplay></lottie-player>
+    </div>
   </div>
 
   <div class="grid_1-1-1">
@@ -140,5 +142,11 @@ import Testimonial from "../components/Testimonial.astro";
     }
   }
   @media screen and (min-width: 800px) {
+  }
+
+  @media screen and (max-width: 600px) {
+    .stars {
+      display: none;
+    }
   }
 </style>
